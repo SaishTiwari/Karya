@@ -8,26 +8,62 @@
 import SwiftUI
 
 struct ListView: View {
-    @State var TodoList : [String] = ["Grocery Shopping", "Futsal Game", "Go To Gym", "Drop off litter"]
+    @EnvironmentObject  var listviewmodel : ListViewModel
     var body: some View {
         
-            List{
-                
-                
-                ForEach(TodoList, id:\.self ){data in
-                    HStack {
-                        Image(systemName: "checkmark.circle")
-                        Text(data)
+        ZStack{
+            
+            if listviewmodel.TodoList.isEmpty{
+                NoItemsView()
+            }
+            else{
+                List{
+                    
+                    
+                    
+                    ForEach(listviewmodel.TodoList){data in
+                            
+                        HStack {
+                            
+                            
+                            
+                            Image(systemName: data.isCompleted ? "checkmark.circle" : "circle")
+                            
+                                .foregroundColor(data.isCompleted ? Color.green : Color.red)
+                            Text(data.title)
+                                .onTapGesture {
+                                    withAnimation(.linear){
+                                        listviewmodel.updateStatus(items: data)
+                                    }
+                                }
+                            
+                        }
+                        
+                        .font(.title2)
+                        .padding(.vertical, 8)
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                     }
+                    .onDelete(perform: listviewmodel.DeleteItems)
+                    .onMove(perform: listviewmodel.MoveItems)
+                        
                     
-                    
-                    
-                    
-                    
+
                     
                 }
+                
+                
+                .listStyle(PlainListStyle())
+                
             }
-            .listStyle(PlainListStyle())
+        }
+        
+      
             
             
             
@@ -39,14 +75,23 @@ struct ListView: View {
             
             .navigationTitle("TO DO LIST 📝")
         
+        
 
         
        
     }
-}
+    
+
+        
+
+        
+    }
+
 
 #Preview {
     NavigationView{
         ListView()
+           
     }
+    .environmentObject(ListViewModel())
 }
