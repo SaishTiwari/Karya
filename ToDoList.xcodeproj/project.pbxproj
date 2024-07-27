@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD247D922C554707000A714A /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD247D912C554707000A714A /* HomePage.swift */; };
+		DD247D942C5548AD000A714A /* QuotesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD247D932C5548AD000A714A /* QuotesPage.swift */; };
 		DD52F4DE2C52A97B0099A311 /* NoItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD52F4DD2C52A97B0099A311 /* NoItemsView.swift */; };
 		DD643C142C535FA100E1D065 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD643C132C535FA100E1D065 /* LaunchScreen.storyboard */; };
 		DDA5C2032C3E72610013C599 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA5C2022C3E72610013C599 /* ListView.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD247D912C554707000A714A /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		DD247D932C5548AD000A714A /* QuotesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesPage.swift; sourceTree = "<group>"; };
 		DD52F4DD2C52A97B0099A311 /* NoItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoItemsView.swift; sourceTree = "<group>"; };
 		DD643C132C535FA100E1D065 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DDA5C2022C3E72610013C599 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
@@ -49,6 +53,8 @@
 				DDA5C2042C3E75B70013C599 /* AddNew.swift */,
 				DD52F4DD2C52A97B0099A311 /* NoItemsView.swift */,
 				DD643C132C535FA100E1D065 /* LaunchScreen.storyboard */,
+				DD247D912C554707000A714A /* HomePage.swift */,
+				DD247D932C5548AD000A714A /* QuotesPage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -178,10 +184,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDDD21772C3EAD4F00E4AF66 /* ListViewModel.swift in Sources */,
+				DD247D942C5548AD000A714A /* QuotesPage.swift in Sources */,
 				DDDD97EF2C3D766700E02226 /* ToDoListApp.swift in Sources */,
 				DD52F4DE2C52A97B0099A311 /* NoItemsView.swift in Sources */,
 				DDA5C2052C3E75B70013C599 /* AddNew.swift in Sources */,
 				DDDD21742C3EA4DD00E4AF66 /* ItemModel.swift in Sources */,
+				DD247D922C554707000A714A /* HomePage.swift in Sources */,
 				DDA5C2032C3E72610013C599 /* ListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,15 +321,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ToDoList/Preview Content\"";
 				DEVELOPMENT_TEAM = VN37N5583Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Karya;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -342,15 +353,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ToDoList/Preview Content\"";
 				DEVELOPMENT_TEAM = VN37N5583Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Karya;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

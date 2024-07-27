@@ -1,69 +1,72 @@
-//
-//  NoItemsView.swift
-//  ToDoList
-//
-//  Created by Saish Tiwari on 25/07/2024.
-//
-
 import SwiftUI
 
 struct NoItemsView: View {
+    @State var animate: Bool = false
+    @State var size: CGFloat = 1.0
+    @State var color: Color = .blue
+    
     var body: some View {
-        
-        VStack(spacing : -10){
+        VStack(spacing: -10) {
             Spacer()
             
-            Text("Your List is Empty")
-                .font(.title)
-                .foregroundColor(.red)
+            
+            Text("No Tasks Yet!")
+                .font(.title2)
                 .fontWeight(.bold)
-                .padding(.bottom, 40)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal)
+                
+            
+            
             
             Text("""
-            Looks like you have a clean slate! Why not add something fun or important to do? Tap the Add button in the top right corner and get started. How about:
-                •    Try a new recipe
-                •    Read a chapter of a book
-                •    Call an old friend
-                •    Dance like no one’s watching
-                •    Plan a mini-adventure
+            Tap the add button in the top right corner and get inspired:
+                •    Explore a new hobby
+                •    Dive into a good book
+                •    Reconnect with someone special
+                •    Get moving with a fun workout
+                •    Plan an exciting outing
             """)
-            
-            
             .padding()
             .multilineTextAlignment(.leading)
             
             NavigationLink(destination: AddNew(), label: {
-                
-                Text("Add Something")
-                    .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: 55)
-                    .background(Color.blue).cornerRadius(10).padding()
+                Text("Add Something ✍️")
+                    .frame(maxWidth: .infinity, maxHeight: 55)
+                    .background(color)
+                    .cornerRadius(10)
+                    .padding()
+                    .padding(.vertical,15)
                     .foregroundColor(.white)
-                   
-                
-                            })
+                    .scaleEffect(size)
+                    .onAppear(perform: addAnimation)
+            })
             
-            
-        Spacer()
             Spacer()
             Spacer()
             Spacer()
             Spacer()
-        
-        
-        
-        
-        
-    }
-        
+       
+        }
         .padding()
-    
-}
+    }
 }
 
 #Preview {
-    NavigationView{
+    NavigationView {
         NoItemsView()
             .navigationTitle("Title")
     }
-    
+}
+
+extension NoItemsView {
+    func addAnimation() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            withAnimation(.easeInOut(duration: 1.0).repeatForever(autoreverses: true)) {
+                animate.toggle()
+                size = animate ? 1.11 : 1.0
+                color = animate ? .red : .blue
+            }
+        }
+    }
 }

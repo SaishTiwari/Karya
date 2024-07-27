@@ -13,6 +13,7 @@ struct ListView: View {
         
         ZStack{
             
+ 
             if listviewmodel.TodoList.isEmpty{
                 NoItemsView()
             }

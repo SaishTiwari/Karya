@@ -25,10 +25,12 @@ class ListViewModel : ObservableObject{
 
 func getItems(){
      
-    guard 
+    guard
         let data = UserDefaults.standard.data(forKey: itemskey),
         let saveditems = try? JSONDecoder().decode([ItemModel].self, from: data)
     else {return}
+    
+    self.TodoList = saveditems
     
     
     
@@ -61,8 +63,8 @@ func getItems(){
     }
     
     func saveItems(){
-        if let encodeddata = try? JSONEncoder().encode(TodoList){
-            UserDefaults.standard.setValue(encodeddata, forKey: itemskey)
+        if let encodedData = try? JSONEncoder().encode(TodoList){
+            UserDefaults.standard.setValue(encodedData, forKey: itemskey)
         }
         
         

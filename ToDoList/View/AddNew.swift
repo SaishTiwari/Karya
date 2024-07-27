@@ -23,7 +23,7 @@ struct AddNew: View {
                     .frame(maxWidth: .infinity)
                     .frame(height: 55)
                     .background(Color.gray.opacity(0.2).cornerRadius(10))
-                    .foregroundColor(.black)
+                    .foregroundColor(.primary)
                 
                     .padding()
                 
