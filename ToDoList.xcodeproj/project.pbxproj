@@ -18,6 +18,7 @@
 		DDDD97EF2C3D766700E02226 /* ToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDD97EE2C3D766700E02226 /* ToDoListApp.swift */; };
 		DDDD97F32C3D766900E02226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDDD97F22C3D766900E02226 /* Assets.xcassets */; };
 		DDDD97F62C3D766900E02226 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDDD97F52C3D766900E02226 /* Preview Assets.xcassets */; };
+		DDF687AA2C57E912005B84F9 /* SplashScreen .swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF687A92C57E912005B84F9 /* SplashScreen .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		DDDD97EE2C3D766700E02226 /* ToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListApp.swift; sourceTree = "<group>"; };
 		DDDD97F22C3D766900E02226 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DDDD97F52C3D766900E02226 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DDF687A92C57E912005B84F9 /* SplashScreen .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SplashScreen .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				DDA5C2022C3E72610013C599 /* ListView.swift */,
+				DDF687A92C57E912005B84F9 /* SplashScreen .swift */,
 				DDA5C2042C3E75B70013C599 /* AddNew.swift */,
 				DD52F4DD2C52A97B0099A311 /* NoItemsView.swift */,
 				DD643C132C535FA100E1D065 /* LaunchScreen.storyboard */,
@@ -186,6 +189,7 @@
 				DDDD21772C3EAD4F00E4AF66 /* ListViewModel.swift in Sources */,
 				DD247D942C5548AD000A714A /* QuotesPage.swift in Sources */,
 				DDDD97EF2C3D766700E02226 /* ToDoListApp.swift in Sources */,
+				DDF687AA2C57E912005B84F9 /* SplashScreen .swift in Sources */,
 				DD52F4DE2C52A97B0099A311 /* NoItemsView.swift in Sources */,
 				DDA5C2052C3E75B70013C599 /* AddNew.swift in Sources */,
 				DDDD21742C3EA4DD00E4AF66 /* ItemModel.swift in Sources */,

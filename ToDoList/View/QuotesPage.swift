@@ -1,16 +1,9 @@
-//
-//  QuotesPage.swift
-//  ToDoList
-//
-//  Created by Saish Tiwari on 27/07/2024.
-//
-
 import SwiftUI
 
 struct QuotesPage: View {
-    @State private var currentQuoteIndex = 0
+    @State private var currentQuoteIndex = Int.random(in: 0...49)
     @State private var animate = false
-    
+   
     private let quotes: [String] = [
         "The secret of getting ahead is getting started.",
         "It's not the load that breaks you down, it's the way you carry it.",
@@ -61,47 +54,80 @@ struct QuotesPage: View {
         "Sometimes we’re tested not to show our weaknesses, but to discover our strengths.",
         "Success is not for the lazy.",
         "The best way to get something done is to begin.",
-        "The difference between ordinary and extraordinary is that little extra."
+        "The difference between ordinary and extraordinary is that little extra.",
+        "Believe in the magic of new beginnings.",
+        "The only limit is your mind.",
+        "Push through the pain and you’ll reach new heights.",
+        "Dream big, work hard, stay focused.",
+        "Challenges are what make life interesting.",
+        "The best time for new beginnings is now.",
+        "Turn your dreams into plans.",
+        "Embrace the journey, not just the destination.",
+        "Your future is created by what you do today, not tomorrow.",
+        "Be a voice, not an echo.",
+        "Success is the result of preparation, hard work, and learning from failure.",
+        "You are the artist of your own life. Don’t hand the paintbrush to anyone else."
     ]
     
-    private let timer = Timer.publish(every: 15, on: .main, in: .common).autoconnect() // 5 hours = 18000 seconds
-
+    private let timer = Timer.publish(every: 3600, on: .main, in: .common).autoconnect()
+    
     var body: some View {
-        VStack {
-            
-            Spacer()
-            
-            ZStack {
-                ForEach(0..<quotes.count, id: \.self) { index in
-                    if index == currentQuoteIndex {
-                        Text(quotes[index])
-                            .font(.largeTitle)
-                            .padding()
-                            .multilineTextAlignment(.leading)
-                            .background(
-                                RoundedRectangle(cornerRadius: 25)
-                                    
-                                    .fill(Color.green.opacity(0.2))
-                                    
-                                
-                            )
-                            .frame(maxWidth: .infinity, maxHeight: .infinity)
-                            .transition(.opacity)
-                            .animation(.easeInOut(duration: 1), value: animate)
+        NavigationView {
+            VStack {
+                Spacer()
+                HStack {
+                    Image(systemName: "quote.opening")
+                        .resizable()
+                        .frame(width: 30, height: 20)
+                    
+                    Spacer()
+                }
+                .padding()
+                
+                ZStack {
+                    Text(quotes[currentQuoteIndex])
+                        .font(.custom("SnellRoundhand", size: 50))
+                        .multilineTextAlignment(.center)
+                        .transition(.opacity)
+                        .animation(.easeInOut(duration: 1), value: animate)
+                        .padding()
+                }
+                
+                HStack {
+                    Spacer()
+                    
+                    Image(systemName: "quote.closing")
+                        .resizable()
+                        .frame(width: 30, height: 20)
+                }
+                .padding()
+                Spacer()
+                
+                Text("Tap for More").padding()
+                    .onTapGesture {
+                        changeQuote()
                     }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onReceive(timer) { _ in
+                withAnimation {
+                    animate.toggle()
+                    currentQuoteIndex = (currentQuoteIndex + 1) % quotes.count
                 }
             }
-            
-            Spacer()
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .onReceive(timer) { _ in
-            animate.toggle()
-            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.count
+            .navigationTitle("Thought of the day")
         }
     }
 }
 
 #Preview {
     QuotesPage()
+}
+
+extension QuotesPage {
+    func changeQuote() {
+        withAnimation {
+            currentQuoteIndex = (currentQuoteIndex + 1) % quotes.count
+        }
+    }
 }
