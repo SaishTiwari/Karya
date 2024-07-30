@@ -13,7 +13,7 @@ struct ToDoListApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                HomePage()
+                SplashScreen()
             }
             .environmentObject(listviewmodel)
 
